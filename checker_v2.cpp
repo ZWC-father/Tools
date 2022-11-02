@@ -10,9 +10,9 @@ void WA(){printf("\nStatus: Wrong Answer!\n");exit(1);}
 void open(char *ansfile,char *outfile){
 	bool flag=0;
 	if(ans=fopen(ansfile,"r"))printf("Read answer from %s\n",ansfile);
-	else flag=1,printf("Can't open output file!\n");
-	if(out=fopen(outfile,"r"))printf("Read output from %s\n",outfile);
 	else flag=1,printf("Can't open answer file!\n");
+	if(out=fopen(outfile,"r"))printf("Read output from %s\n",outfile);
+	else flag=1,printf("Can't open output file!\n");
 	if(flag)exit(-1);
 }
 inline bool read(FILE *stream,bool op,int &len){

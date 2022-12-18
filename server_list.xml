@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <settings>
 <servers><server url="http://sy.tjtele.com:8080/speedtest/upload.php" lat="39.0189" lon="117.2173" name="TianJin" country="China" cc="CN" sponsor="China Telecom TianJin-5G" id="34115"  host="sy.tjtele.com:8080" />
 <server url="http://speedtest.bmcc.com.cn:8080/speedtest/upload.php" lat="39.9139" lon="116.3917" name="Beijing" country="China" cc="CN" sponsor="China Mobile Group Beijing Co.Ltd" id="25858"  host="speedtest.bmcc.com.cn:8080" />

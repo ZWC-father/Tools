@@ -44,7 +44,8 @@ int main(){
 	fout.open(string(gettime()+".log").c_str());
 	logit("Monitor Started!");
 	
-	bool status=0;
+	bool status=1;
+    bool prepare=1;
 	while(1){
 		unsigned count=0;
 		for(const auto& ipaddr:ips){
@@ -55,11 +56,18 @@ int main(){
 				if(status)logit(ipaddr+string(" is not alive."));
 			}
 		}
-		if(count==ips.size()){
-			if(!status)logit("All hosts are alive!"),status=1;
-		}else if(!count){
-			if(status)logit("All hosts are NOT alive!"),status=0;
-		}
+        if(prepare){
+            if(count==ips.size())logit("All hosts are alive!");
+            else if(!count)logit("All hosts are NOT alive!"),status=0;
+            else status=0;
+            prepare=0;
+        }else{
+            if(count==ips.size()){
+                if(!status)logit("All hosts are alive!"),status=1;
+            }else if(!count){
+                if(status)logit("All hosts are NOT alive!"),status=0;
+            }
+        }
 		sleep(60);
 	}
 	return 0;
